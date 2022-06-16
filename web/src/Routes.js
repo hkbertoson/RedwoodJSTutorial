@@ -7,9 +7,9 @@
 // 'src/pages/HomePage/HomePage.js'         -> HomePage
 // 'src/pages/Admin/BooksPage/BooksPage.js' -> AdminBooksPage
 
-import { Router, Route, Set, Private } from '@redwoodjs/router'
+import { Router, Route, Private, Set } from '@redwoodjs/router'
 import PostsLayout from 'src/layouts/PostsLayout'
-import BlogLayout from './layouts/BlogLayout/BlogLayout'
+import BlogLayout from 'src/layouts/BlogLayout'
 
 const Routes = () => {
   return (
@@ -27,8 +27,8 @@ const Routes = () => {
         </Set>
       </Private>
       <Set wrap={BlogLayout}>
-        <Route path="/article/{id:Int}" page={ArticlePage} name="article" />
         <Route path="/contact" page={ContactPage} name="contact" />
+        <Route path="/article/{id:Int}" page={ArticlePage} name="article" />
         <Route path="/about" page={AboutPage} name="about" />
         <Route path="/" page={HomePage} name="home" />
       </Set>
